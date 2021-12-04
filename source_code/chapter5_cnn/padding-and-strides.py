@@ -30,11 +30,13 @@ print(comp_conv2d(conv2d, X).shape)
 '''
 结论：
     1、计算公式：
-        floor[(n_h - k_h + p_h + s_h)/s_h] * floor[(n_w - k_w + p_w + s_w)/s_w]
-    2、当p_h=k_h-1和p_w=k_w-1时：
-        floor[(n_h + s_h - 1)/s_h] * floor[(n_w + s_w - 1)/s_w]
+        floor[(h - k + p + s)/s] * floor[(w - k + p + s)/s]
+    2、当p=k-1时：
+        floor[(h + s - 1)/s] * floor[(w + s - 1)/s]
+        更进一步，当s = 1时：
+            [h] * [w]
     3、如果输入的高度和宽度可以被垂直和水平步幅整除：
-        [n_h/s_h] * [n_w/s_w]
-        达到步幅了衰减s_h和s_w倍的目的
+        [h/s] * [w/s]
+        达到步幅了衰减s和s倍的目的
 '''
 
