@@ -37,10 +37,9 @@ def corr2d_multi_in_out_1x1(X, K):
     Y = torch.matmul(K, X)
     return Y.reshape((c_o, h, w))
 
+# 验证二者相等
 X = torch.normal(0, 1, (3, 3, 3))
 K = torch.normal(0, 1, (2, 3, 1, 1))
-
-# 验证二者相等
 # 使用全连接替换卷积
 Y1 = corr2d_multi_in_out_1x1(X, K)
 # 正常的使用卷积
