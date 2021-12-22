@@ -18,7 +18,7 @@ net = nn.Sequential(
     nn.Conv2d(384, 384, kernel_size=3, padding=1), nn.ReLU(),
     nn.Conv2d(384, 256, kernel_size=3, padding=1), nn.ReLU(),
     nn.MaxPool2d(kernel_size=3, stride=2),
-    nn.Flatten(),
+    nn.Flatten(),                                                                                                                
     # 这里，全连接层的输出数量是LeNet中的好几倍。使用dropout层来减轻过度拟合
     nn.Linear(6400, 4096), nn.ReLU(),
     nn.Dropout(p=0.5),
